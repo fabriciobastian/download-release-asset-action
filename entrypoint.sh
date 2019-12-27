@@ -5,7 +5,7 @@ VERSION=$1
 REPO=$2
 FILE=$3
 
-echo `Version: $VERSION - Repo: $REPO - File: $FILE`
+echo "Version: $VERSION - Repo: $REPO - File: $FILE"
 
 if [ "$VERSION" = "latest" ]; then
   # Github should return the latest release first.
