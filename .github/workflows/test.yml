@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test download asset
+    steps:
+    # To use this repository's private action, you must check out the repository
+    - name: Checkout
+      uses: actions/checkout@v1
+    - uses: ./ # Uses an action in the root directory
+    - name: Download asset action step
+      id: download asset
+      uses: actions/download-release-asset-action@v1
+      with:
+        repository: 'JsonRpcNet/JsonRpcNet.Docs.Ui'
+        file: 'jsonrpcnet-docs-ui.zip'
+    - name: Unzip output file
+      run: unzip jsonrpcnet-docs-ui.zip
