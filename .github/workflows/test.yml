@@ -12,7 +12,8 @@ jobs:
       uses: actions/checkout@v1
     - uses: ./ # Uses an action in the root directory
     - name: Download asset action step
-      uses: actions/download-release-asset-action@v1
+      #uses: actions/download-release-asset-action@v1
+      uses: ../../action.yml
       with:
         repository: 'JsonRpcNet/JsonRpcNet.Docs.Ui'
         file: 'jsonrpcnet-docs-ui.zip'
