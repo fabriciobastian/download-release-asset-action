@@ -14,8 +14,8 @@ jobs:
     - name: Download asset action step
       uses: fabriciobastian/download-release-asset-action@v1
       with:
-        version: 'latest'
-        repository: 'JsonRpcNet/JsonRpcNet.Docs.Ui'
-        file: 'jsonrpcnet-docs-ui.zip'
+        version: latest
+        repository: JsonRpcNet/JsonRpcNet.Docs.Ui
+        file: jsonrpcnet-docs-ui.zip
     - name: Unzip output file
       run: unzip jsonrpcnet-docs-ui.zip
