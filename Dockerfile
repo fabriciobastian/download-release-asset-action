@@ -1,7 +1,7 @@
 # Container image that runs your code
 FROM ubuntu
 
-RUN apt-get update && apt-get install -y jq && apt-get install -y wget && apt-get install -y curl
+RUN apt-get update && apt-get install -y jq wget curl
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
