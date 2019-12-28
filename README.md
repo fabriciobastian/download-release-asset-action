@@ -31,3 +31,6 @@ jobs:
         file: jsonrpcnet-docs-ui.zip
     # ... more steps
 ```
+
+## Credits
+https://gist.github.com/maxim/6e15aa45ba010ab030c4
