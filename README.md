@@ -1,3 +1,6 @@
+[![GitHub build action status](https://github.com/fabriciobastian/download-release-asset-action/workflows/test-local/badge.svg)](https://github.com/fabriciobastian/download-release-asset-action/actions)
+[![GitHub build action status](https://github.com/fabriciobastian/download-release-asset-action/workflows/test-latest-release/badge.svg)](https://github.com/fabriciobastian/download-release-asset-action/actions)
+
 # download-release-asset-action
 Downloads an asset from a public github release
 
