@@ -1,12 +1,9 @@
 #!/bin/sh -l
 
 GITHUB="https://api.github.com"
-# VERSION=$1
-# REPO=$2
-# FILE=$3
-VERSION=$INPUT_version
-REPO=$INPUT_repo
-FILE=$INPUT_file
+VERSION=$1
+REPO=$2
+FILE=$3
 
 echo "Version: $VERSION - Repo: $REPO - File: $FILE"
 

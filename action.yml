@@ -9,10 +9,15 @@ inputs:
   repository:
     description: 'Relative path to the repository in the format user/repo e.g.: myuser/my-repository'
     required: true
+    default: 'JsonRpcNet/JsonRpcNet.Docs.Ui'
   file:
     description: 'The name of the asset to download from the release'
     required: true
+    default: 'jsonrpcnet-docs-ui.zip'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-
+  args: 
+    - "${{ inputs.version }}"
+    - "${{ inputs.repository }}"
+    - "${{ inputs.file }}"
