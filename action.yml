@@ -1,5 +1,8 @@
 # action.yml
 name: 'Download Release Asset'
+branding:
+  icon: 'download'
+  color: 'gray-dark'
 description: 'Download an asset from a public github release'
 inputs:
   version:
