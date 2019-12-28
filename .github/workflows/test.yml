@@ -10,8 +10,7 @@ jobs:
     # To use this repository's private action, you must check out the repository
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Download asset
-      uses: ./ # Uses an action in the root directory
+    - uses: ./ # Uses an action in the root directory
         with:
           version: latest
           repository: JsonRpcNet/JsonRpcNet.Docs.Ui
