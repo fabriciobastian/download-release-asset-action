@@ -10,7 +10,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     - name: Download asset action step
-      uses: fabriciobastian/download-release-asset-action@v1.0.1
+      uses: fabriciobastian/download-release-asset-action@v1.0.2
       with:
         version: latest
         repository: JsonRpcNet/JsonRpcNet.Docs.Ui
