@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Test download asset
     steps:
-    # To use this repository's private action, you must check out the repository
     - name: Checkout
       uses: actions/checkout@v1
     - name: Download asset action step
