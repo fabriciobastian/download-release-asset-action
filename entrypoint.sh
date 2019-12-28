@@ -8,7 +8,6 @@ FILE=$3
 echo "Version: $VERSION - Repo: $REPO - File: $FILE"
 
 if [ "$VERSION" = "latest" ]; then
-  # Github should return the latest release first.
   parser=".[0].assets | map(select(.name == \"$FILE\"))[0].id"
 else
   parser=". | map(select(.tag_name == \"$VERSION\"))[0].assets | map(select(.name == \"$FILE\"))[0].id"
