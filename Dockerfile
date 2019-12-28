@@ -7,4 +7,5 @@ RUN apt-get update && apt-get install -y jq && apt-get install -y wget && apt-ge
 COPY entrypoint.sh /entrypoint.sh
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+CMD
+ENTRYPOINT ["/entrypoint.sh", $INPUT_VERSION, $INPUT_REPO, $INPUT_FILE]
