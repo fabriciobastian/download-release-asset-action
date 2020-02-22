@@ -14,10 +14,10 @@ else
   parser=". | map(select(.tag_name == \"$VERSION\"))[0].assets | map(select(.name == \"$FILE\"))[0].id"
 fi;
 
-token_auth = ""
-if [ ! -z "$TOKEN"]; then
+token_auth=""
+if [ ! -z "$TOKEN" ]; then
   echo "--- Using access token ---"
-  token_auth = `-H "Authorization: token $TOKEN"`
+  token_auth="-H \"Authorization: token $TOKEN\""
 else
   echo "--- Not using access token ---"
 fi;
