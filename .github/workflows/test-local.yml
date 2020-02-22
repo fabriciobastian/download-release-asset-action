@@ -15,6 +15,6 @@ jobs:
       with:
         version: latest
         repository: JsonRpcNet/JsonRpcNet.Ui
-        file: jsonrpcnet-docs-ui.zip
+        file: jsonrpcnet-ui.zip
     - name: Unzip output file
-      run: unzip jsonrpcnet-docs-ui.zip
+      run: unzip jsonrpcnet-ui.zip
