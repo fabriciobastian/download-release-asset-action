@@ -15,6 +15,10 @@ inputs:
   file:
     description: 'The name of the asset to download from the release'
     required: true
+  token:
+    description: 'The GitHub access token'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -22,3 +26,4 @@ runs:
     - "${{ inputs.version }}"
     - "${{ inputs.repository }}"
     - "${{ inputs.file }}"
+    - "${{ inputs.token }}"

@@ -2,13 +2,14 @@
 [![GitHub build action status](https://github.com/fabriciobastian/download-release-asset-action/workflows/test-latest-release/badge.svg)](https://github.com/fabriciobastian/download-release-asset-action/actions)
 
 # download-release-asset-action
-Downloads an asset from a public github release
+Downloads an asset from a github release
 
 ## Parameters
 
 - **version**: a specific release version or 'latest' for latest version. Defaults to 'latest'
 - **repository**: relative path to the repository in the format user/repository e.g.: fabriciobastian/download-release-asset-action
 - **file**: name of the file to be downloaded from the release
+- _**[token]**_: optional GitHub access token
 
 ## Usage example
 

@@ -4,6 +4,7 @@ GITHUB="https://api.github.com"
 VERSION=$1
 REPO=$2
 FILE=$3
+TOKEN=$4
 
 echo "Version: $VERSION - Repo: $REPO - File: $FILE"
 
@@ -13,7 +14,12 @@ else
   parser=". | map(select(.tag_name == \"$VERSION\"))[0].assets | map(select(.name == \"$FILE\"))[0].id"
 fi;
 
-asset_id=`curl -H "Accept: application/vnd.github.v3.raw" -s $GITHUB/repos/$REPO/releases | jq "$parser"`
+token_auth = ""
+if [ ! -z "$TOKEN"]; then
+  token_auth = `-H "Authorization: token $TOKEN"`
+fi;
+
+asset_id=`curl $token_auth -H "Accept: application/vnd.github.v3.raw" -s $GITHUB/repos/$REPO/releases | jq "$parser"`
 if [ "$asset_id" = "null" ]; then
   echo "ERROR: Version $VERSION was not found! 1>&2"
   exit 1
