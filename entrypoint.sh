@@ -16,7 +16,10 @@ fi;
 
 token_auth = ""
 if [ ! -z "$TOKEN"]; then
+  echo "--- Using access token ---"
   token_auth = `-H "Authorization: token $TOKEN"`
+else
+  echo "--- Not using access token ---"
 fi;
 
 asset_id=`curl $token_auth -H "Accept: application/vnd.github.v3.raw" -s $GITHUB/repos/$REPO/releases | jq "$parser"`
