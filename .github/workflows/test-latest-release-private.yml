@@ -10,7 +10,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     - name: Download asset action step
-      uses: fabriciobastian/download-release-asset-action@v1.0.3
+      uses: fabriciobastian/download-release-asset-action@v1.0.4
       with:
         version: latest
         repository: fabriciobastian/test-download-release-asset-action
