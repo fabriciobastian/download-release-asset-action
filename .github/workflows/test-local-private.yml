@@ -15,7 +15,7 @@ jobs:
       with:
         version: latest
         repository: fabriciobastian/test-download-release-asset-action
-        file: test-download-release-asset-action-0.0.1.zip
+        file: test.zip
         token: ${{secrets.TEST_ACTION}}
     - name: Unzip output file
-      run: unzip test-download-release-asset-action-0.0.1.zip
+      run: unzip test.zip
