@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-GITHUB="https://api.github.com"
+GITHUBAPI="api.github.com"
 VERSION=$1
 REPO=$2
 FILE=$3
@@ -22,12 +22,18 @@ else
   echo "--- Not using access token ---"
 fi;
 
-asset_id=`curl $token_auth -H "Accept: application/vnd.github.v3.raw" -s $GITHUB/repos/$REPO/releases | jq "$parser"`
+asset_id=`curl $token_auth -H "Accept: application/vnd.github.v3.raw" -s https://$GITHUBAPI/repos/$REPO/releases | jq "$parser"`
 if [ "$asset_id" = "null" ]; then
   echo "ERROR: Version $VERSION was not found! 1>&2"
   exit 1
 fi;
 
-wget -q --header='Accept:application/octet-stream' \
-  $GITHUB/repos/$REPO/releases/assets/$asset_id \
-  -O $FILE
+if [ ! z "$TOKEN"]; then
+  wget -q --header='Accept:application/octet-stream' \
+    https://$GITHUBAPI/repos/$REPO/releases/assets/$asset_id \
+    -O $FILE
+else
+  wget -q --auth-no-challenge --header='Accept:application/octet-stream' \
+    https://$TOKEN:@$GITHUBAPI/repos/$REPO/releases/assets/$asset_id \
+    -O $FILE
+fi;
