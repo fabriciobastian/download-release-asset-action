@@ -28,12 +28,8 @@ if [ "$asset_id" = "null" ]; then
   exit 1
 fi;
 
-if [ ! z "$TOKEN"]; then
-  wget -q --header='Accept:application/octet-stream' \
-    https://$GITHUBAPI/repos/$REPO/releases/assets/$asset_id \
-    -O $FILE
+if [ ! z "$TOKEN" ]; then
+  wget -q --header='Accept:application/octet-stream' https://$GITHUBAPI/repos/$REPO/releases/assets/$asset_id -O $FILE
 else
-  wget -q --auth-no-challenge --header='Accept:application/octet-stream' \
-    https://$TOKEN:@$GITHUBAPI/repos/$REPO/releases/assets/$asset_id \
-    -O $FILE
+  wget -q --auth-no-challenge --header='Accept:application/octet-stream' https://$TOKEN:@$GITHUBAPI/repos/$REPO/releases/assets/$asset_id -O $FILE
 fi;
