@@ -1,0 +1,20 @@
+name: test-latest-release-private
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test download asset
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Download asset action step
+      uses: fabriciobastian/download-release-asset-action@v1.0.3
+      with:
+        version: latest
+        repository: fabriciobastian/test-download-release-asset-action
+        file: test-download-release-asset-action-0.0.1.zip
+        token: ${{secrets.TEST_ACTION}}
+    - name: Unzip output file
+      run: unzip test-download-release-asset-action-0.0.1.zip

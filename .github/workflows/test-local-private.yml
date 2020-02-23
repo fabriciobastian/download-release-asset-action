@@ -1,4 +1,4 @@
-name: test-local
+name: test-local-private
 
 on: [push]
 
@@ -14,7 +14,8 @@ jobs:
       uses: ./ # Uses an action in the root directory
       with:
         version: latest
-        repository: JsonRpcNet/JsonRpcNet.Ui
-        file: jsonrpcnet-ui.zip
+        repository: fabriciobastian/test-download-release-asset-action
+        file: test-download-release-asset-action-0.0.1.zip
+        token: ${{secrets.TEST_ACTION}}
     - name: Unzip output file
-      run: unzip jsonrpcnet-ui.zip
+      run: unzip test-download-release-asset-action-0.0.1.zip

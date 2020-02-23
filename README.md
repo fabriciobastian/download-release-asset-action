@@ -1,5 +1,7 @@
-[![GitHub build action status](https://github.com/fabriciobastian/download-release-asset-action/workflows/test-local/badge.svg)](https://github.com/fabriciobastian/download-release-asset-action/actions)
-[![GitHub build action status](https://github.com/fabriciobastian/download-release-asset-action/workflows/test-latest-release/badge.svg)](https://github.com/fabriciobastian/download-release-asset-action/actions)
+[![GitHub build action status](https://github.com/fabriciobastian/download-release-asset-action/workflows/test-local-public/badge.svg)](https://github.com/fabriciobastian/download-release-asset-action/actions)
+[![GitHub build action status](https://github.com/fabriciobastian/download-release-asset-action/workflows/test-latest-release-public/badge.svg)](https://github.com/fabriciobastian/download-release-asset-action/actions)
+[![GitHub build action status](https://github.com/fabriciobastian/download-release-asset-action/workflows/test-local-private/badge.svg)](https://github.com/fabriciobastian/download-release-asset-action/actions)
+[![GitHub build action status](https://github.com/fabriciobastian/download-release-asset-action/workflows/test-latest-release-private/badge.svg)](https://github.com/fabriciobastian/download-release-asset-action/actions)
 
 # download-release-asset-action
 Downloads an asset from a github release

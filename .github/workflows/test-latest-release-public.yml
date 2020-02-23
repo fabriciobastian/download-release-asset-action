@@ -1,0 +1,19 @@
+name: test-latest-release-public
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test download asset
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Download asset action step
+      uses: fabriciobastian/download-release-asset-action@v1.0.3
+      with:
+        version: latest
+        repository: JsonRpcNet/JsonRpcNet.Ui
+        file: jsonrpcnet-ui.zip
+    - name: Unzip output file
+      run: unzip jsonrpcnet-ui.zip
