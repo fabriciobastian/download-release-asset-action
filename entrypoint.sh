@@ -23,7 +23,8 @@ else
 fi;
 
 asset_id=`curl $token_auth -H "Accept: application/vnd.github.v3.raw" -s https://$GITHUBAPI/repos/$REPO/releases | jq "$parser"`
-echo $asset_id
+asset_test = `curl $token_auth -H "Accept: application/vnd.github.v3.raw" -s https://$GITHUBAPI/repos/$REPO/releases`
+echo "asset: $asset_test"
 if [ "$asset_id" = "null" ]; then
   echo "ERROR: Version $VERSION was not found! 1>&2"
   exit 1
