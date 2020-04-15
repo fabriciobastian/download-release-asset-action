@@ -23,7 +23,7 @@ jobs:
     steps:
     # ... some steps
     - name: Download asset
-      uses: fabriciobastian/download-release-asset-action@v1.0.4
+      uses: fabriciobastian/download-release-asset-action@v1.0.6
       with:
         version: latest
         repository: JsonRpcNet/JsonRpcNet.Docs.Ui
