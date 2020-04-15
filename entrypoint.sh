@@ -26,6 +26,7 @@ if [ "$asset_id" = "null" ]; then
   exit 1
 fi;
 
+echo "Output dir: $OUT";
 mkdir -p $OUT
 
 if [ ! -z "$TOKEN" ]; then

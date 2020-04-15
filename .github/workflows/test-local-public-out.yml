@@ -1,4 +1,4 @@
-name: test-local-public
+name: test-local-public-out
 
 on: [push]
 
