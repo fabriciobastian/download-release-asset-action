@@ -1,4 +1,4 @@
-name: test-latest-release-private
+name: test-latest-release-public-out
 
 on: [push]
 
@@ -13,8 +13,8 @@ jobs:
       uses: fabriciobastian/download-release-asset-action@v1.0.5
       with:
         version: latest
-        repository: fabriciobastian/test-download-release-asset-action
-        file: test.zip
-        token: ${{secrets.TEST_ACTION}}
+        repository: JsonRpcNet/JsonRpcNet.Ui
+        file: jsonrpcnet-ui.zip
+        out: ./some/deep/path/
     - name: Unzip output file
-      run: unzip test.zip
+      run: unzip ./some/deep/path/jsonrpcnet-ui.zip

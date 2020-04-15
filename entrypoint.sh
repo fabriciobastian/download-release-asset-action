@@ -7,7 +7,7 @@ FILE=$3
 OUT=${4%/}
 TOKEN=$5
 
-echo "Version: $VERSION - Repo: $REPO - File: $FILE"
+echo "Version: $VERSION - Repo: $REPO - File: $FILE - Out: $OUT"
 
 if [ "$VERSION" = "latest" ]; then
   parser=".[0].assets | map(select(.name == \"$FILE\"))[0].id"
@@ -26,7 +26,6 @@ if [ "$asset_id" = "null" ]; then
   exit 1
 fi;
 
-echo "Output dir: $OUT";
 mkdir -p $OUT
 
 if [ ! -z "$TOKEN" ]; then
