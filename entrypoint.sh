@@ -4,7 +4,8 @@ GITHUBAPI="api.github.com"
 VERSION=$1
 REPO=$2
 FILE=$3
-TOKEN=$4
+OUT=${4%/}
+TOKEN=$5
 
 echo "Version: $VERSION - Repo: $REPO - File: $FILE"
 
@@ -25,8 +26,10 @@ if [ "$asset_id" = "null" ]; then
   exit 1
 fi;
 
+mkdir -p $OUT
+
 if [ ! -z "$TOKEN" ]; then
-  wget -q --auth-no-challenge --header='Accept:application/octet-stream' https://$TOKEN:@$GITHUBAPI/repos/$REPO/releases/assets/$asset_id -O $FILE
+  wget -q --auth-no-challenge --header='Accept:application/octet-stream' https://$TOKEN:@$GITHUBAPI/repos/$REPO/releases/assets/$asset_id -O $OUT/$FILE
 else
-  wget -q --header='Accept:application/octet-stream' https://$GITHUBAPI/repos/$REPO/releases/assets/$asset_id -O $FILE
+  wget -q --header='Accept:application/octet-stream' https://$GITHUBAPI/repos/$REPO/releases/assets/$asset_id -O $OUT/$FILE
 fi;

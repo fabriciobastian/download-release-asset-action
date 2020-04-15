@@ -15,6 +15,10 @@ inputs:
   file:
     description: 'The name of the asset to download from the release'
     required: true
+  out:
+    description: 'Path to the directory where to download the asset'
+    required: false
+    default: '.'
   token:
     description: 'The GitHub access token'
     required: false
@@ -26,4 +30,5 @@ runs:
     - "${{ inputs.version }}"
     - "${{ inputs.repository }}"
     - "${{ inputs.file }}"
+    - "${{ inputs.out }}"
     - "${{ inputs.token }}"
